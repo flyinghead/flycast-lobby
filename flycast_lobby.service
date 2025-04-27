@@ -1,0 +1,14 @@
+[Unit]
+Description=Battle cable lobby server
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Environment=LOG_FILE=/var/log/flycast_lobby.log
+Type=simple
+Restart=always
+RestartSec=1
+ExecStart=/usr/bin/node /usr/local/flycast_lobby/index.js
+
+[Install]
+WantedBy=multi-user.target
